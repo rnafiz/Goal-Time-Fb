@@ -3,63 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Goal Time FIFA</title>
+<title>Goal Time FIFA | Live Football Scores & News</title>
+
+<meta name="description" content="Live Football Scores, Fixtures, FIFA World Cup 2026, Transfer News, Premier League, La Liga, UEFA Champions League and more.">
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
 body{
-margin:0;
-font-family:Arial;
-background:#111;
+background:#0f172a;
 color:white;
 }
 
 header{
 background:#00b894;
-padding:20px;
+padding:18px;
 text-align:center;
-font-size:30px;
+font-size:32px;
 font-weight:bold;
 }
 
 nav{
-background:#222;
-padding:15px;
-text-align:center;
+background:#111827;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin:15px;
+padding:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#00ffb3;
 }
 
 .hero{
-padding:60px;
 text-align:center;
+padding:80px 20px;
 }
 
 .hero h1{
-font-size:40px;
+font-size:48px;
 }
 
-.button{
-background:#00b894;
-padding:12px 30px;
+.hero p{
+margin-top:15px;
+font-size:20px;
+color:#ccc;
+}
+
+.btn{
 display:inline-block;
+margin-top:25px;
+background:#00b894;
+padding:15px 35px;
 color:white;
 text-decoration:none;
-border-radius:6px;
-margin-top:20px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+}
+
+.card h3{
+color:#00ffb3;
+margin-bottom:10px;
 }
 
 footer{
-background:#222;
-padding:20px;
+background:#111827;
 text-align:center;
-margin-top:50px;
+padding:20px;
+margin-top:40px;
 }
-
 </style>
 
 </head>
@@ -67,32 +106,62 @@ margin-top:50px;
 <body>
 
 <header>
-Goal Time FIFA
+⚽ Goal Time FIFA
 </header>
 
 <nav>
-
 <a href="#">Home</a>
-
 <a href="#">Live Score</a>
-
 <a href="#">Fixtures</a>
-
 <a href="#">News</a>
-
 <a href="#">Leagues</a>
-
+<a href="#">World Cup</a>
 </nav>
 
-<div class="hero">
+<section class="hero">
 
-<h1>Football Live Score Website</h1>
+<h1>Live Football Scores & News</h1>
 
-<p>Latest Live Scores, Fixtures and Football News</p>
+<p>
+Follow FIFA World Cup 2026, Premier League, Champions League,
+La Liga, Serie A and more.
+</p>
 
-<a class="button">View Live Matches</a>
+<a href="#" class="btn">Watch Live Scores</a>
+
+</section>
+
+<section class="section">
+
+<h2 style="text-align:center;margin-bottom:30px;">
+🔥 Trending Football
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚽ Live Matches</h3>
+<p>Check today's live football scores.</p>
+</div>
+
+<div class="card">
+<h3>📰 Latest News</h3>
+<p>Breaking football news from around the world.</p>
+</div>
+
+<div class="card">
+<h3>🏆 Top Leagues</h3>
+<p>Premier League, La Liga, Serie A and more.</p>
+</div>
+
+<div class="card">
+<h3>🌍 FIFA World Cup</h3>
+<p>Fixtures, standings and live updates.</p>
+</div>
 
 </div>
+
+</section>
 
 <footer>
 
@@ -101,5 +170,4 @@ Goal Time FIFA
 </footer>
 
 </body>
-
 </html>
