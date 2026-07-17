@@ -131,7 +131,38 @@ La Liga, Serie A and more.
 
 </section>
 
-<section class="section">
+<section class="section"><section class="section">
+
+<h2 style="text-align:center;margin-bottom:30px;">
+📊 Live Match Center
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🔴 Live Matches</h3>
+<p id="liveMatch">Loading...</p>
+</div>
+
+<div class="card">
+<h3>📰 Breaking News</h3>
+<p id="newsBox">Loading...</p>
+</div>
+
+<div class="card">
+<h3>🏆 Featured League</h3>
+<p id="leagueBox">Premier League</p>
+</div>
+
+<div class="card">
+<h3>🌍 World Cup 2026</h3>
+<p id="worldCupBox">Fixtures coming soon...</p>
+</div>
+
+</div>
+
+</section>
+  
 
 <h2 style="text-align:center;margin-bottom:30px;">
 🔥 Trending Football
@@ -168,8 +199,16 @@ La Liga, Serie A and more.
 © 2026 Goal Time FIFA
 
 </footer>
-
-</body>const firebaseConfig = {
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+const firebaseConfig = {
   apiKey: "AIzaSyDS8m3zyHxYfRqf1cNpzMCg7A2IRp5qeZ8",
   authDomain: "goal-time-c8b2a.firebaseapp.com",
   projectId: "goal-time-c8b2a",
@@ -177,4 +216,83 @@ La Liga, Serie A and more.
   messagingSenderId: "175206612749",
   appId: "1:175206612749:web:0ece9f20bb5d2f9e64fa44"
 };
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+console.log("✅ Firebase Connected");
+
+// টেস্ট ডেটা যোগ করার ফাংশন
+async function addTestData() {
+  try {
+    await addDoc(collection(db, "rnafiz"), {
+      title: "Goal Time FIFA",
+      message: "Firebase Connected Successfully",
+      createdAt: new Date()
+    });
+    console.log("✅ Data Added");
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+// Firestore থেকে ডেটা পড়ার ফাংশন
+async function loadData() {
+  const querySnapshot = await getDocs(collection(db, "rnafiz"));
+  querySnapshot.forEach((doc) => {
+    console.log(doc.id, doc.data());
+  });
+}
+
+// প্রথমবার টেস্ট ডেটা যোগ করবে
+addTestData();
+
+// তারপর ডেটা দেখাবে
+loadData();
+<script type="module">...</script>-document.getElementById("liveMatch").innerHTML =
+"Manchester City 2 - 1 Real Madrid";
+
+document.getElementById("newsBox").innerHTML =
+"Breaking: Latest football news will appear here.";
+
+document.getElementById("leagueBox").innerHTML =
+"Premier League | La Liga | Serie A";
+
+document.getElementById("worldCupBox").innerHTML =
+"FIFA World Cup 2026 qualifiers updated.";
+  
+</script><section class="section">
+
+<h2 style="text-align:center;margin-bottom:25px;">
+🛠 Admin Panel
+</h2>
+
+<div class="card" style="max-width:600px;margin:auto;">
+
+<input id="title"
+type="text"
+placeholder="News Title"
+style="width:100%;padding:12px;margin-bottom:15px;">
+
+<textarea
+id="content"
+placeholder="News Content"
+style="width:100%;padding:12px;height:120px;margin-bottom:15px;"></textarea>
+
+<button id="saveBtn"
+style="width:100%;padding:15px;
+background:#00b894;
+color:white;
+border:none;
+font-size:18px;
+cursor:pointer;">
+Publish News
+</button>
+
+</div>
+
+</section>
+  <footer>
+</script> 
+</body>
 </html>
